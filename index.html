@@ -211,6 +211,7 @@
             id="nombre"
             name="nombre"
             placeholder="Nombre completo"
+            required
           />
           <input
             type="text"
@@ -223,29 +224,17 @@
             id="mail"
             name="mail"
             placeholder="Correo electrónico"
+            required
           />
           <textarea
             id="mensaje"
             name="mensaje"
             rows="6"
             placeholder="Mensaje"
+            required
           ></textarea>
 
           <div class="form-footer">
-            <div class="acepto-politica">
-              <input
-                type="checkbox"
-                id="privacidad"
-                name="privacidad"
-                required
-              />
-              <label for="privacidad">
-                Confirmo que he leído y acepto la
-                <a href="#" target="_blank">política de tratamiento de datos</a
-                >.
-              </label>
-            </div>
-
             <div class="botones-formulario">
               <button type="submit">Enviar</button>
               <button type="reset">Limpiar</button>
