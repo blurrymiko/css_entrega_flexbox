@@ -1,3 +1,5 @@
+/* Estilos base */
+
 :root {
   --blanco-perla: #f9f9f9;
   --negro-suave: #111;
@@ -8,7 +10,6 @@
   --ancho-maximo: 100%;
 }
 
-/* Reset y configuración general */
 * {
   margin: 0;
   padding: 0;
@@ -31,7 +32,7 @@ a:hover {
   filter: brightness(1.2);
 }
 
-/* HEADER */
+/* Cabecera fija, con la navegación en horizontal */
 header {
   background-color: var(--blanco-perla);
   position: fixed;
@@ -43,7 +44,8 @@ header {
 }
 
 .header-container {
-  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 1rem 2rem;
   display: flex;
   align-items: center;
@@ -67,7 +69,8 @@ nav ul li a:hover {
   text-shadow: 0 0 5px rgba(56, 178, 172, 0.4);
 }
 
-/* BIENVENIDA */
+/* Sección de presentación con el título de la web */
+
 #bienvenida {
   background-image: url('assets/header_img.webp');
   background-size: cover;
@@ -91,7 +94,7 @@ nav ul li a:hover {
   font-weight: 400;
 }
 
-/* SECCIONES GENERALES */
+/* Secciones divididas de SOBRE NOSOTROS y VALORES. Por estética, la sección VALORES no tiene título */
 section {
   max-width: var(--ancho-maximo);
   margin: 3rem auto;
@@ -100,21 +103,19 @@ section {
 
 section h2 {
   font-size: 2.2rem;
-  margin-bottom: 2rem;
-  margin-left: 2rem;
-  margin-top: 3rem;
+  margin: 3rem 0 2rem 2rem;
 }
 
-/* ABOUT US */
 #about-us > div {
   display: flex;
   gap: 2rem;
   align-items: center;
+  max-width: 1200px;
+  margin: auto;
 }
 
 #about-us figure img {
   width: 100%;
-  max-width: 1200px;
   border-radius: var(--borde-radio);
 }
 
@@ -126,12 +127,13 @@ section h2 {
   text-align: center;
 }
 
-/* VALORES */
 #valores > div {
   display: flex;
   gap: 2rem;
   align-items: center;
-  flex-direction: reverse;
+  max-width: 1200px;
+  margin: auto;
+  flex-direction: row;
 }
 
 #valores figure img {
@@ -155,7 +157,7 @@ section h2 {
   padding-left: 0;
 }
 
-/* PROYECTOS */
+/* Sección PROYECTOS con seis tarjetas de diferentes proyectos */
 .main-proyectos {
   background-color: var(--blanco-perla);
   color: var(--negro-suave);
@@ -183,7 +185,7 @@ section h2 {
   padding: 1rem;
   border-radius: var(--borde-radio);
   box-shadow: var(--sombra);
-  flex: 1;
+  flex: 1 1 calc(33.33% - 1rem);
   min-width: 250px;
 }
 
@@ -192,11 +194,11 @@ section h2 {
   border-radius: var(--borde-radio);
 }
 
-/* CLIENTES */
+/* Sección CLIENTES con un par de opiniones en versión quote */
 #clientes {
   background-color: var(--negro-suave);
   color: white;
-  max-width: 100%;
+  max-width: 1200px;
   margin: 3rem auto;
   padding: 3rem 2rem;
 }
@@ -245,6 +247,10 @@ section h2 {
   gap: 0.5rem;
   font-style: normal;
 }
+
+/* ¡REVISAR CAMBIOS ASIDE!  */
+
+/* Sección combinada de FORMULARIO DE CONTACTO con aside de BLOG */
 
 #formulario_contacto {
   background-color: var(--blanco-perla);
@@ -346,16 +352,63 @@ section h2 {
   text-decoration: underline;
 }
 
-/* FOOTER */
+/* PIE DE PÁGINA simple */
 footer {
   background-color: var(--negro-suave);
   color: white;
   text-align: center;
-  padding: 2rem 1rem;
-  border-top: 4px solid var(--blanco-perla);
+  padding: 2rem rem;
+  border-top: 1px solid var(--blanco-perla);
 }
 
 footer img {
-  height: 30px;
-  margin: 0 0.5rem;
+  height: 40px;
+  margin: 10 0.5rem;
+}
+
+/*MediaQueries para móviles (640p), portátiles (1280p) y monitores*/
+
+@media (max-width: 640px) {
+  .header-container,
+  #about-us > div,
+  #valores > div,
+  .contacto-blog {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .proyecto {
+    flex: 1 1 100%;
+  }
+
+  .clientes-container {
+    flex-direction: column;
+  }
+
+  .contacto-blog {
+    padding: 0;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1280px) {
+  .proyecto {
+    flex: 1 1 calc(50% - 1rem);
+  }
+
+  .clientes-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 1281px) {
+  .header-container,
+  #about-us > div,
+  #valores > div,
+  .main-proyectos,
+  #clientes,
+  .contacto-blog {
+    max-width: 100%;
+    margin: auto;
+  }
 }
