@@ -1,7 +1,3 @@
-<!--Módulo 3. Entrega práctica HTML-->
-
-<!--La validación emite una advertencia en el uso del "/" en el cierre de algunas etiquetas como <meta> <img> o <link> que no puedo corregir debido al autoformateo del VSCode-->
-
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -16,7 +12,6 @@
       content="Inmobiliarias, Videos, Arquitectura, Interiorismo, Reformas, Real Estate, Fotografía"
     />
     <meta name="author" content="Rodrigo Álvarez González" />
-
     <title>kubhi. Productora audiovisual</title>
     <link rel="icon" href="assets/head_icon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -79,7 +74,6 @@
     </section>
 
     <section id="valores">
-      <h2>NUESTROS VALORES</h2>
       <div class="valores-container">
         <div class="valores-texto">
           <p>
@@ -111,6 +105,7 @@
       <section id="proyectos">
         <h2>PROYECTOS</h2>
         <div class="proyectos-grid">
+          <!-- 6 proyectos repetidos como ejemplo -->
           <article class="proyecto">
             <img src="assets/sec_proyectos_1_img.png" alt="Proyecto Cubismo" />
             <h4>
@@ -165,19 +160,6 @@
           </article>
         </div>
       </section>
-
-      <aside>
-        <h2>BLOG</h2>
-        <ul>
-          <li>
-            <a href="#">5 claves para grabar inmuebles con luz natural</a>
-          </li>
-          <li><a href="#">Drones y arquitectura</a></li>
-          <li><a href="#">La importancia de la narrativa visual</a></li>
-          <li><a href="#">Un "house tour" por las casas más lujosas</a></li>
-          <li><a href="#">¿Casas de cine o cine de casas?</a></li>
-        </ul>
-      </aside>
     </main>
 
     <section id="clientes">
@@ -186,13 +168,10 @@
         <blockquote class="cliente">
           <p>"kubhi. es capaz de plasmar el alma de cada proyecto."</p>
           <footer>
-            <cite
-              ><img
-                src="assets/sec_clientes_1_img.avif"
-                alt="ThePower"
-              />
-              José Ángel Cueto - ThePower Real Estate</cite
-            >
+            <cite>
+              <img src="assets/sec_clientes_1_img.avif" alt="ThePower" />
+              José Ángel Cueto - ThePower Real Estate
+            </cite>
           </footer>
         </blockquote>
         <blockquote class="cliente">
@@ -201,22 +180,33 @@
             pasión."
           </p>
           <footer>
-            <cite
-              ><img
-                src="assets/sec_clientes_2_img.jpg"
-                alt="MBA Architecture"
-              />
-              María Gómez Navarro - MBA Architecture</cite
-            >
+            <cite>
+              <img src="assets/sec_clientes_2_img.jpg" alt="MBA Architecture" />
+              María Gómez Navarro - MBA Architecture
+            </cite>
           </footer>
         </blockquote>
       </div>
     </section>
 
     <section id="formulario_contacto">
-      <h2>CONTACTO</h2>
-      <form action="#" method="post">
-                    <input
+      <div class="contacto-blog">
+        <aside id="blog">
+          <h5>También te puede interesar:</h5>
+          <ul>
+            <li>
+              <a href="#">5 claves para grabar inmuebles con luz natural</a>
+            </li>
+            <li><a href="#">Drones y arquitectura</a></li>
+            <li><a href="#">La importancia de la narrativa visual</a></li>
+            <li><a href="#">Un "house tour" por las casas más lujosas</a></li>
+            <li><a href="#">¿Casas de cine o cine de casas?</a></li>
+          </ul>
+        </aside>
+
+        <form action="#" method="post">
+          <h5>Si quieres seguir conociéndonos...</h5>
+          <input
             type="text"
             id="nombre"
             name="nombre"
@@ -240,20 +230,29 @@
             rows="6"
             placeholder="Mensaje"
           ></textarea>
-        </fieldset>
 
-        <div>
-          <input type="checkbox" id="privacidad" name="privacidad" required />
-          <label for="privacidad">
-            Confirmo que he leído y acepto la
-            <a href="#" target="_blank">política de tratamiento de datos</a>.
-          </label>
-        </div>
-        <div>
-          <button type="submit">Enviar</button>
-          <button type="reset">Limpiar</button>
-        </div>
-      </form>
+          <div class="form-footer">
+            <div class="acepto-politica">
+              <input
+                type="checkbox"
+                id="privacidad"
+                name="privacidad"
+                required
+              />
+              <label for="privacidad">
+                Confirmo que he leído y acepto la
+                <a href="#" target="_blank">política de tratamiento de datos</a
+                >.
+              </label>
+            </div>
+
+            <div class="botones-formulario">
+              <button type="submit">Enviar</button>
+              <button type="reset">Limpiar</button>
+            </div>
+          </div>
+        </form>
+      </div>
     </section>
 
     <footer>
